@@ -668,7 +668,9 @@ module.exports =
       }
     },
 
-    componentWillUnmount: function componentWillUnmount() {},
+    componentWillUnmount: function componentWillUnmount() {
+      setScroll();
+    },
 
     toggleMenu: function toggleMenu(e) {
       this.setScroll();
@@ -702,13 +704,9 @@ module.exports =
 
     setScroll: function setScroll() {
 
-      var handle = function handle(e) {
+      function handle(e) {
         e.preventDefault();
-      };
-
-      var handle2 = function handle2(e) {
-        return true;
-      };
+      }
 
       if (!this.state.mobileMenuOpen) {
         document.body.style.overflow = "hidden";
@@ -716,7 +714,6 @@ module.exports =
       } else {
         document.body.style.overflow = null;
         document.body.removeEventListener('touchmove', handle, false);
-        document.body.addEventListener('touchmove', handle2, true);
       }
     },
 
