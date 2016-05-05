@@ -668,9 +668,7 @@ module.exports =
       }
     },
 
-    componentWillUnmount: function componentWillUnmount() {
-      setScroll();
-    },
+    componentWillUnmount: function componentWillUnmount() {},
 
     toggleMenu: function toggleMenu(e) {
       this.setScroll();
