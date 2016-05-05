@@ -671,7 +671,7 @@ module.exports =
     componentWillUnmount: function componentWillUnmount() {},
 
     toggleMenu: function toggleMenu(e) {
-      this.setScroll();
+      setTimeout(this.setScroll, 200);
       this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
       this.linksIn();
     },
@@ -706,7 +706,7 @@ module.exports =
         e.preventDefault();
       };
 
-      if (!this.state.mobileMenuOpen) {
+      if (this.state.mobileMenuOpen) {
         document.body.style.overflow = "hidden";
         document.body.addEventListener('touchmove', handle, false);
       } else {
