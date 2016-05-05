@@ -717,7 +717,7 @@ module.exports =
         document.body.addEventListener('touchmove', handle, false);
       } else {
         document.body.style.overflow = null;
-        document.body.removeEventListener('touchmove', handle, false);
+        document.body.removeEventListener('touchmove', handle2, false);
         document.body.addEventListener('touchmove', handle2, false);
       }
     },
