@@ -668,10 +668,12 @@ module.exports =
       }
     },
 
-    componentWillUnmount: function componentWillUnmount() {},
+    componentWillUnmount: function componentWillUnmount() {
+      setScroll();
+    },
 
     toggleMenu: function toggleMenu(e) {
-      setTimeout(this.setScroll, 200);
+      this.setScroll();
       this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
       this.linksIn();
     },
@@ -706,12 +708,17 @@ module.exports =
         e.preventDefault();
       };
 
-      if (this.state.mobileMenuOpen) {
+      var handle2 = function handle2(e) {
+        return true;
+      };
+
+      if (!this.state.mobileMenuOpen) {
         document.body.style.overflow = "hidden";
         document.body.addEventListener('touchmove', handle, false);
       } else {
         document.body.style.overflow = null;
         document.body.removeEventListener('touchmove', handle, false);
+        document.body.addEventListener('touchmove', handle2, false);
       }
     },
 
