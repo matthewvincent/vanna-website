@@ -704,16 +704,16 @@ module.exports =
 
     setScroll: function setScroll() {
 
-      function handle(e) {
+      var handle = function handle(e) {
         e.preventDefault();
-      }
+      };
 
       if (this.state.mobileMenuOpen) {
         document.body.style.overflow = null;
-        document.body.removeEventListener('touchmove', handle, false);
+        document.body.ontouchmove = null;
       } else {
         document.body.style.overflow = "hidden";
-        document.body.addEventListener('touchmove', handle, false);
+        document.body.ontouchmove = handle;
       }
     },
 
