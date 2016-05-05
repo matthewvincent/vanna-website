@@ -709,11 +709,11 @@ module.exports =
       }
 
       if (this.state.mobileMenuOpen) {
-        document.body.style.overflow = "hidden";
-        document.body.addEventListener('touchmove', handle, false);
-      } else {
         document.body.style.overflow = null;
         document.body.removeEventListener('touchmove', handle, false);
+      } else {
+        document.body.style.overflow = "hidden";
+        document.body.addEventListener('touchmove', handle, false);
       }
     },
 
