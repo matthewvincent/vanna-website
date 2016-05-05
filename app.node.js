@@ -711,9 +711,11 @@ module.exports =
       if (this.state.mobileMenuOpen) {
         document.body.style.overflow = null;
         document.body.ontouchmove = null;
+        console.log("no scroll");
       } else {
         document.body.style.overflow = "hidden";
         document.body.ontouchmove = handle;
+        console.log("scroll");
       }
     },
 
