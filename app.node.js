@@ -65,7 +65,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = __webpack_require__(47);
+  var _reactDom = __webpack_require__(50);
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -81,17 +81,19 @@ module.exports =
 
   var routes = {
     '/404': function _() {
-      return __webpack_require__(19);
-    }, '/500': function _() {
       return __webpack_require__(20);
-    }, '/': function _() {
+    }, '/500': function _() {
       return __webpack_require__(21);
-    }, '/merch': function merch() {
+    }, '/': function _() {
       return __webpack_require__(22);
-    }, '/tour': function tour() {
+    }, '/merch': function merch() {
       return __webpack_require__(23);
-    }, '/videos': function videos() {
+    }, '/photos': function photos() {
       return __webpack_require__(24);
+    }, '/tour': function tour() {
+      return __webpack_require__(25);
+    }, '/videos': function videos() {
+      return __webpack_require__(26);
     } }; // Auto-generated on build. See tools/lib/routes-loader.js
 
   var route = function route(path, callback) {
@@ -242,15 +244,15 @@ module.exports =
 
   var _fbjsLibExecutionEnvironment = __webpack_require__(5);
 
-  var _historyLibCreateBrowserHistory = __webpack_require__(44);
+  var _historyLibCreateBrowserHistory = __webpack_require__(47);
 
   var _historyLibCreateBrowserHistory2 = _interopRequireDefault(_historyLibCreateBrowserHistory);
 
-  var _historyLibCreateMemoryHistory = __webpack_require__(45);
+  var _historyLibCreateMemoryHistory = __webpack_require__(48);
 
   var _historyLibCreateMemoryHistory2 = _interopRequireDefault(_historyLibCreateMemoryHistory);
 
-  var _historyLibUseQueries = __webpack_require__(46);
+  var _historyLibUseQueries = __webpack_require__(49);
 
   var _historyLibUseQueries2 = _interopRequireDefault(_historyLibUseQueries);
 
@@ -281,13 +283,13 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(25);
+  __webpack_require__(27);
 
   var _albumsConfigJs = __webpack_require__(7);
 
   var _albumsConfigJs2 = _interopRequireDefault(_albumsConfigJs);
 
-  var _staticVannaAlbumLogoPng = __webpack_require__(40);
+  var _staticVannaAlbumLogoPng = __webpack_require__(43);
 
   var _staticVannaAlbumLogoPng2 = _interopRequireDefault(_staticVannaAlbumLogoPng);
 
@@ -305,6 +307,17 @@ module.exports =
         _react2['default'].createElement(AlbumLogo, null)
       ),
       _react2['default'].createElement(
+        AlbumTeaser,
+        null,
+        _react2['default'].createElement('iframe', {
+          width: '560',
+          height: '315',
+          src: 'https://www.youtube.com/embed/lWbrQ97kuTA',
+          frameborder: '0',
+          allowfullscreen: true
+        })
+      ),
+      _react2['default'].createElement(
         'div',
         { className: 'release-info' },
         _react2['default'].createElement(
@@ -312,9 +325,20 @@ module.exports =
           null,
           'IN STORES JULY 8, 2016'
         ),
-        _react2['default'].createElement(PreorderButton, {
-          link: 'http://merchnow.com/catalogs/vanna'
-        })
+        _react2['default'].createElement(
+          PreorderButton,
+          {
+            link: 'http://smarturl.it/VannaMA'
+          },
+          ' BUY CD/LP'
+        ),
+        _react2['default'].createElement(
+          PreorderButton,
+          {
+            link: 'http://smarturl.it/VannaMA'
+          },
+          ' BUY DIGITAL'
+        )
       ),
       _react2['default'].createElement(MusicSection, { config: _albumsConfigJs2['default'] })
     );
@@ -327,24 +351,39 @@ module.exports =
     });
   };
 
-  var PreorderButton = function PreorderButton(_ref) {
-    var link = _ref.link;
+  var AlbumTeaser = function AlbumTeaser(props) {
     return _react2['default'].createElement(
-      'a',
-      {
-        className: 'preorder-button',
-        href: link
-      },
+      'div',
+      { className: 'album-teaser' },
       _react2['default'].createElement(
-        'span',
-        { className: 'preorder-text' },
-        'PRE-ORDER HERE'
+        'div',
+        { className: 'video-background' },
+        _react2['default'].createElement(
+          'div',
+          { className: 'responsive-video-wrapper' },
+          props.children
+        )
       )
     );
   };
 
-  var MusicSection = function MusicSection(_ref2) {
-    var config = _ref2.config;
+  var PreorderButton = function PreorderButton(props) {
+    return _react2['default'].createElement(
+      'a',
+      {
+        className: 'preorder-button',
+        href: props.link
+      },
+      _react2['default'].createElement(
+        'span',
+        { className: 'preorder-text' },
+        props.children
+      )
+    );
+  };
+
+  var MusicSection = function MusicSection(_ref) {
+    var config = _ref.config;
 
     var albums = config.map(function (album) {
       return _react2['default'].createElement(AlbumLinks, {
@@ -368,12 +407,12 @@ module.exports =
     );
   };
 
-  var AlbumLinks = function AlbumLinks(_ref3) {
-    var image = _ref3.image;
-    var spotifyLink = _ref3.spotifyLink;
-    var appleLink = _ref3.appleLink;
-    var title = _ref3.title;
-    var storeLink = _ref3.storeLink;
+  var AlbumLinks = function AlbumLinks(_ref2) {
+    var image = _ref2.image;
+    var spotifyLink = _ref2.spotifyLink;
+    var appleLink = _ref2.appleLink;
+    var title = _ref2.title;
+    var storeLink = _ref2.storeLink;
     return _react2['default'].createElement(
       'div',
       { className: "promoted-album" },
@@ -431,15 +470,15 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _staticVoidCoverPng = __webpack_require__(43);
+  var _staticVoidCoverPng = __webpack_require__(46);
 
   var _staticVoidCoverPng2 = _interopRequireDefault(_staticVoidCoverPng);
 
-  var _staticAltCoverPng = __webpack_require__(37);
+  var _staticAltCoverPng = __webpack_require__(40);
 
   var _staticAltCoverPng2 = _interopRequireDefault(_staticAltCoverPng);
 
-  var _staticAllHellCoverPng = __webpack_require__(35);
+  var _staticAllHellCoverPng = __webpack_require__(38);
 
   var _staticAllHellCoverPng2 = _interopRequireDefault(_staticAllHellCoverPng);
 
@@ -452,13 +491,13 @@ module.exports =
   }, {
   		title: "Void",
   		spotifyLink: "https://play.spotify.com/album/0qH0QizOeIbULmQVXq3sEj",
-  		appleLink: "https://itunes.apple.com/us/album/void/id986449812",
+  		appleLink: "http://geni.us/VANNAALT?app=itunes",
   		thumbnail: _staticVoidCoverPng2['default'],
   		storeLink: "http://smarturl.it/VannaMA"
   }, {
   		title: "ALT",
   		spotifyLink: "https://play.spotify.com/album/0CO124UhDKHk172wfuWpUO",
-  		appleLink: "https://itunes.apple.com/us/album/alt-ep/id1032446450",
+  		appleLink: "http://geni.us/VANNAVOID?app=itunes",
   		thumbnail: _staticAltCoverPng2['default'],
   		storeLink: "http://smarturl.it/VannaMA"
   }];
@@ -482,7 +521,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(26);
+  __webpack_require__(28);
 
   var _socialConfigJs = __webpack_require__(9);
 
@@ -562,7 +601,7 @@ module.exports =
   	link: "http://vannaboston.tumblr.com/"
   }, {
   	name: "instagram",
-  	link: "https://www.instagram.com/vannaboston/"
+  	link: "https://www.instagram.com/vannaband/"
   }];
 
   exports["default"] = socialLinks;
@@ -584,11 +623,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _staticVannaLogoPng = __webpack_require__(42);
+  var _staticVannaLogoPng = __webpack_require__(45);
 
   var _staticVannaLogoPng2 = _interopRequireDefault(_staticVannaLogoPng);
 
-  __webpack_require__(27);
+  __webpack_require__(29);
 
   var Header = function Header() {
   		return _react2['default'].createElement(
@@ -625,7 +664,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(28);
+  __webpack_require__(30);
 
   var _Navigation = __webpack_require__(15);
 
@@ -653,6 +692,10 @@ module.exports =
         }, {
           name: "Merch",
           href: "/merch",
+          show: true
+        }, {
+          name: "Photos",
+          href: "/photos",
           show: true
         }, {
           name: "Tour",
@@ -711,11 +754,9 @@ module.exports =
       if (this.state.mobileMenuOpen) {
         document.body.style.overflow = null;
         document.body.ontouchmove = null;
-        console.log("scroll");
       } else {
         document.body.style.overflow = "hidden";
         document.body.ontouchmove = handle;
-        console.log("no scroll");
       }
     },
 
@@ -783,7 +824,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(29);
+  __webpack_require__(31);
 
   var _coreLocation = __webpack_require__(4);
 
@@ -880,7 +921,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(30);
+  __webpack_require__(32);
 
   var _merchConfigJs = __webpack_require__(14);
 
@@ -966,19 +1007,19 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _static24hundredPng = __webpack_require__(34);
+  var _static24hundredPng = __webpack_require__(37);
 
   var _static24hundredPng2 = _interopRequireDefault(_static24hundredPng);
 
-  var _staticAll_in_logoPng = __webpack_require__(36);
+  var _staticAll_in_logoPng = __webpack_require__(39);
 
   var _staticAll_in_logoPng2 = _interopRequireDefault(_staticAll_in_logoPng);
 
-  var _staticMerchnowPng = __webpack_require__(39);
+  var _staticMerchnowPng = __webpack_require__(42);
 
   var _staticMerchnowPng2 = _interopRequireDefault(_staticMerchnowPng);
 
-  var _staticJxrPng = __webpack_require__(38);
+  var _staticJxrPng = __webpack_require__(41);
 
   var _staticJxrPng2 = _interopRequireDefault(_staticJxrPng);
 
@@ -1029,13 +1070,13 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(31);
+  __webpack_require__(33);
 
   var _Link = __webpack_require__(12);
 
   var _Link2 = _interopRequireDefault(_Link);
 
-  var _staticVannaBrandLogoPng = __webpack_require__(41);
+  var _staticVannaBrandLogoPng = __webpack_require__(44);
 
   var _staticVannaBrandLogoPng2 = _interopRequireDefault(_staticVannaBrandLogoPng);
 
@@ -1221,6 +1262,50 @@ module.exports =
   'use strict';
 
   Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  __webpack_require__(34);
+
+  var PhotosWrapper = function PhotosWrapper() {
+    return _react2['default'].createElement(
+      Photos,
+      null,
+      _react2['default'].createElement('iframe', {
+        src: 'http://snapwidget.com/in/?u=dmFubmFiYW5kfGlufDIwMHwzfDIwfHxub3w1fG5vbmV8b25TdGFydHxub3x5ZXM=&ve=130516',
+        title: 'Instagram Widget',
+        className: 'snapwidget-widget',
+        allowTransparency: 'true',
+        frameBorder: '0',
+        scrolling: 'no'
+      })
+    );
+  };
+
+  var Photos = function Photos(props) {
+    return _react2['default'].createElement(
+      'div',
+      { className: 'photos' },
+      props.children
+    );
+  };
+
+  exports['default'] = PhotosWrapper;
+  module.exports = exports['default'];
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
   	value: true
   });
 
@@ -1230,7 +1315,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(32);
+  __webpack_require__(35);
 
   var TourDatesWrapper = _react2['default'].createClass({
   	displayName: 'TourDatesWrapper',
@@ -1262,7 +1347,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
   "use strict";
@@ -1306,7 +1391,7 @@ module.exports =
   module.exports = exports["default"];
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1321,9 +1406,9 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(33);
+  __webpack_require__(36);
 
-  var _VideoDataJs = __webpack_require__(17);
+  var _VideoDataJs = __webpack_require__(18);
 
   var _VideoDataJs2 = _interopRequireDefault(_VideoDataJs);
 
@@ -1403,7 +1488,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1468,7 +1553,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -1539,7 +1624,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1598,7 +1683,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1652,7 +1737,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1675,7 +1760,61 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _componentsTourDatesTourDatesJs = __webpack_require__(16);
+  var _componentsPhotosPhotosJs = __webpack_require__(16);
+
+  var _componentsPhotosPhotosJs2 = _interopRequireDefault(_componentsPhotosPhotosJs);
+
+  var _default = (function (_Component) {
+    _inherits(_default, _Component);
+
+    function _default() {
+      _classCallCheck(this, _default);
+
+      _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(_default, [{
+      key: 'render',
+      value: function render() {
+        return _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement(_componentsPhotosPhotosJs2['default'], null)
+        );
+      }
+    }]);
+
+    return _default;
+  })(_react.Component);
+
+  exports['default'] = _default;
+  module.exports = exports['default'];
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+  var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _react = __webpack_require__(1);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _componentsTourDatesTourDatesJs = __webpack_require__(17);
 
   var _componentsTourDatesTourDatesJs2 = _interopRequireDefault(_componentsTourDatesTourDatesJs);
 
@@ -1715,7 +1854,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1738,7 +1877,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _componentsVideosVideosJs = __webpack_require__(18);
+  var _componentsVideosVideosJs = __webpack_require__(19);
 
   var _componentsVideosVideosJs2 = _interopRequireDefault(_componentsVideosVideosJs);
 
@@ -1769,43 +1908,15 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 25 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
-
-  // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n.album-promo {\n\twidth: 100%;\n\theight: 700px;\n\tmargin-top: 300px;\n\tmargin-bottom: 60px;\n\tpadding: 20px;\n\tbackground-color: rgba(255,255,255, 1);\n}\n\n.album-logo {\n\tmargin-top: 85px;\n\tmax-width: 700px;\n}\n\n.release-info {\n\tmargin: auto;\n\tcolor: white;\n\tletter-spacing: 3px;\n\theight: 180px;\n}\n\n.release-info h1 {\n\tfont-weight: 200;\n\tmargin-bottom: 40px;\n}\n\n\n.preorder-button {\n\tmargin-top: 60px;\n\tfont-weight: bold;\n\tfont-size: 20px;\n\tbackground-color: white;\n\ttext-decoration: none;\n\tletter-spacing: 1px;\n\tpadding: 10px;\n\tborder-radius: 2px;\n\t-webkit-transition: all .2s ease-out;\n\t-o-transition: all .2s ease-out;\n\ttransition: all .2s ease-out\n}\n\n\n.preorder-button:hover{\n\topacity: .7;\n}\n\n.preorder-text {\n\tcolor: #ebb09d;\n\tbackground:\n      -webkit-linear-gradient(\n\t\tleft, \n\t\trgba(236,180,162,1) 0%, \n\t\trgba(249,229,204,1) 100%\n\t);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.music-section {\n\theight: 1080px;\n\twidth: 100%;\n\tbackground: url(" + __webpack_require__(3) + ") no-repeat center center scroll;\n    -webkit-background-size: cover;\n            background-size: cover;\n}\n\n.album-links-wrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: horizontal;\n\t-webkit-box-direction: reverse;\n\t-webkit-flex-direction: row-reverse;\n\t    -ms-flex-direction: row-reverse;\n\t        flex-direction: row-reverse;\n\tpadding: auto;\n\tpadding-top: 300px;\n\n}\n\n.promoted-album {\n\tbackground-color: rgba(255,255,255, .9);\n\tpadding: 40px;\n\tmargin: auto;\n\tborder-radius: 2px;\n    -webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.listen-links {\n\ttext-align: center;\n\theight: 40px;\n\tmargin-top: 10px;\n\tbackground: -webkit-gradient(linear, left top, right top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: -o-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: linear-gradient(to right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tborder-radius: 2px;\n    -webkit-box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out;\n}\n\n.listen-links a {\n\tpadding: 10px;\n\ttext-decoration: none;\n\tcolor: white;\n}\n\n.listen-links:hover{\n\t-webkit-transform: scale(.97);\n\t    -ms-transform: scale(.97);\n\t     -o-transform: scale(.97);\n\t        transform: scale(.97);\n}\n\n\n.link-icon {\n\tmargin-top: 12px;\n\tmargin-right: 6px;\n\tcolor: rgba(0,0,0, .7);\n}\n\n.promoted-album-thumbnail {\n\twidth: 300px;\n    -webkit-box-shadow: 4px 4px 8px -3px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -3px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out\n}\n\n.promoted-album-thumbnail:hover{\n\t-webkit-transform: scale(.97);\n\t    -ms-transform: scale(.97);\n\t     -o-transform: scale(.97);\n\t        transform: scale(.97);\n}\n\n/* ipad */\n@media (max-device-width: 1024px)  {\n\n   .promoted-album {\n   \t  margin: 0 auto;\n   \t  margin-bottom: 20px;\n   \t  display: inline-block;\n   }\n\n   .album-links-wrapper {\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t-webkit-flex-direction: column;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t}\n\n\t.album-promo {\n\t\twidth: 100%;\n\t\theight: 400px;\n\t\tmargin-top: 100px;\n\t\tmargin-bottom: 60px;\n\t\tpadding: 0px;\n\t\toverflow-x: hidden;\n\t}\n\n\t.album-logo {\n\t\tmargin-top: 45px;\n\t\tmax-width: 400px;\n\t}\n\n\t.music-section {\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tbackground: url(" + __webpack_require__(3) + ") no-repeat center center fixed;\n\t    -webkit-background-size: cover;\n\t            background-size: cover;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 600px;\n\t}\n}\n\n/* iphone 6+ */\n@media (max-device-width: 736px)  { \n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 300px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\twidth: 100%;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t}\n\n\t.album-links-wrapper {\n\t\tpadding-top: 100px;\n\t}\n\n\t.release-info{\n\t\tpadding-top: 10px;\n\t}\n\n\t.release-info h1 {\n\t\tfont-size: 20px;\n\t}\n}\n\n/* iphone 6 */\n@media (max-device-width: 667px) { \n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 270px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t\tmargin-top: 40px;\n\t}\n    \n}\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px) {\n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album {\n\t\tpadding: 20px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 260px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t\tmargin-top: 40px;\n\t}\n}", ""]);
-
-  // exports
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(2)();
-  // imports
-  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
-
-  // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n.social-wrapper {\n\ttext-align: left;\n\tpadding-top: 20px;\n}\n\n.social-list a {\n\tfont-size: 30px;\n\tmargin: 15px;\n\t-webkit-transition: opacity .3s ease;\n\t-o-transition: opacity .3s ease;\n\ttransition: opacity .3s ease\n}\n\n.social-list a:hover{\n\topacity: .5;\n}\n\n.fa-facebook {\n\tcolor: #3b5998;\n}\n\n.fa-tumblr {\n\tcolor: #32506d;\n}\n\n.fa-twitter {\n\tcolor: #00aced;\n}\n\n.fa-instagram {\n\tcolor: #517fa4;\n}\n\n.footer {\n\theight: 100px;\n\tmargin-top: -20px;\n\tbackground-color: rgba(255,255,255, 1);\n}\n\n.mobile-footer {\n\tmargin-top: 0px;\n\tbottom: 0;\n\theight: 85px;\n\tbackground-color: rgba(255,255,255,.5);\n}\n\n/* iphone 6+ */\n@media only screen and (max-device-width: 736px) { \n\n\t.social-wrapper {\n\t\ttext-align: center;\n\t\tpadding-top: 12px;\n\t\tmargin-right: 13%;\n\t}\n\n  \t.social-list a {\n\t\tfont-size: 24px;\n\t\tmargin: 15px;\n\t\t-webkit-transition: opacity .3s ease;\n\t\t-o-transition: opacity .3s ease;\n\t\ttransition: opacity .3s ease\n\t}\n\n  \t.social-list a:hover{\n\t\topacity: .5;\n\t}\n}", ""]);
-
-  // exports
-
-
-/***/ },
 /* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
   // imports
-
+  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
 
   // module
-  exports.push([module.id, "\n.header-logo {\n\tmargin-top: 60px;\n}\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px) {\n\n  \t.header-logo{\n  \t\tmargin-top: 30px;\n\t\t  width: 280px;\n\t}\n\n}\n\n/* iphone 6 */\n@media only screen \n  and (min-device-width: 375px) \n  and (max-device-width: 667px) { \n\n  \t.header-logo {\n  \t\tmargin-top: 30px;\n\t\t  width: 350px;\n\t}\n\n}\n\n/* iphone 6+ */\n@media only screen \n  and (min-device-width: 414px) \n  and (max-device-width: 736px) { \n\n  \t.header-logo {\n  \t\twidth: 400px;\n  \t}\n\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) {\n\n  \t.header-logo {\n\t\twidth: 700px;\n\t}\n\n}", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n\n.album-promo {\n\twidth: 100%;\n\theight: 700px;\n\tmargin-top: 300px;\n\tmargin-bottom: 60px;\n\tpadding: 20px;\n\tbackground-color: rgba(255,255,255, 1);\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.album-logo {\n\tmargin-top: 85px;\n\tmax-width: 700px;\n}\n\n.album-teaser {\n\tmargin: auto;\n\tmargin-bottom: 40px;\n\tmargin-top: -60px;\n\tdisplay: block;\n\ttext-align: center;\n}\n\n.video-background {\n\tpadding: 100px;\n\tpadding-left: 20%;\n\tpadding-right: 20%;\n\tmargin: 0 none;\n\ttext-align: center;\n\tbackground-color: rgba(255,255,255,.5);\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.release-info {\n\tmargin: auto;\n\tcolor: white;\n\tletter-spacing: 3px;\n\theight: 180px;\n}\n\n.release-info h1 {\n\tfont-weight: 200;\n\tmargin-bottom: 40px;\n\tmargin-top: 60px;\n}\n\n\n.preorder-button {\n\tmargin: 10px;\n\tmargin-top: 60px;\n\tfont-weight: bold;\n\tfont-size: 20px;\n\tbackground-color: white;\n\ttext-decoration: none;\n\tletter-spacing: 1px;\n\tpadding: 10px;\n\tborder-radius: 2px;\n\t-webkit-transition: all .2s ease-out;\n\t-o-transition: all .2s ease-out;\n\ttransition: all .2s ease-out\n}\n\n\n.preorder-button:hover{\n\topacity: .7;\n}\n\n.preorder-text {\n\tcolor: #ebb09d;\n\tbackground:\n      -webkit-linear-gradient(\n\t\tleft, \n\t\trgba(236,180,162,1) 0%, \n\t\trgba(249,229,204,1) 100%\n\t);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.music-section {\n\theight: 1080px;\n\twidth: 100%;\n\tbackground: url(" + __webpack_require__(3) + ") no-repeat center center scroll;\n    -webkit-background-size: cover;\n            background-size: cover;\n    -webkit-box-shadow: 0px -4px 8px -2px rgba(0,0,0,0.25);\n            box-shadow: 0px -4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.album-links-wrapper {\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-orient: horizontal;\n\t-webkit-box-direction: reverse;\n\t-webkit-flex-direction: row-reverse;\n\t    -ms-flex-direction: row-reverse;\n\t        flex-direction: row-reverse;\n\tpadding: auto;\n\tpadding-top: 300px;\n\n}\n\n.promoted-album {\n\tbackground-color: rgba(255,255,255, .9);\n\tpadding: 40px;\n\tmargin: auto;\n\tborder-radius: 2px;\n    -webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.listen-links {\n\ttext-align: center;\n\theight: 40px;\n\tmargin-top: 10px;\n\tbackground: -webkit-gradient(linear, left top, right top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: -o-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: linear-gradient(to right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tborder-radius: 2px;\n    -webkit-box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -4px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out;\n}\n\n.listen-links a {\n\tpadding: 10px;\n\ttext-decoration: none;\n\tcolor: white;\n}\n\n.listen-links:hover{\n\t-webkit-transform: scale(.97);\n\t    -ms-transform: scale(.97);\n\t     -o-transform: scale(.97);\n\t        transform: scale(.97);\n}\n\n\n.link-icon {\n\tmargin-top: 12px;\n\tmargin-right: 6px;\n\tcolor: rgba(0,0,0, .7);\n}\n\n.promoted-album-thumbnail {\n\twidth: 300px;\n    -webkit-box-shadow: 4px 4px 8px -3px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -3px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out\n}\n\n.promoted-album-thumbnail:hover{\n\t-webkit-transform: scale(.97);\n\t    -ms-transform: scale(.97);\n\t     -o-transform: scale(.97);\n\t        transform: scale(.97);\n}\n\n/* ipad */\n@media (max-device-width: 1024px)  {\n\n   .promoted-album {\n   \t  margin: 0 auto;\n   \t  margin-bottom: 20px;\n   \t  display: inline-block;\n   }\n\n   .album-links-wrapper {\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t-webkit-flex-direction: column;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t}\n\n\t.album-promo {\n\t\twidth: 100%;\n\t\theight: 400px;\n\t\tmargin-top: 100px;\n\t\tmargin-bottom: 60px;\n\t\tpadding: 0px;\n\t\toverflow-x: hidden;\n\t}\n\n\t.album-logo {\n\t\tmargin-top: 45px;\n\t\tmax-width: 400px;\n\t}\n\n\t.music-section {\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tbackground: url(" + __webpack_require__(3) + ") no-repeat center center fixed;\n\t    -webkit-background-size: cover;\n\t            background-size: cover;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 600px;\n\t}\n}\n\n/* iphone 6+ */\n@media (max-device-width: 736px)  { \n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 300px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\twidth: 100%;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t}\n\n\t.album-links-wrapper {\n\t\tpadding-top: 100px;\n\t}\n\n\t.release-info{\n\t\tpadding-top: 10px;\n\t}\n\n\t.release-info h1 {\n\t\tfont-size: 20px;\n\t\tmargin-top: -10px;\n\t\tmargin-bottom: 30px;\n\t}\n\n\t.preorder-button {\n\t\tdisplay: block;\n\t\tmargin-top: 0px;\n\t}\n\n\t.album-teaser {\n\t\tmargin-bottom: 40px;\n\t\tmargin-top: -60px;\n\t}\n\n\t.video-background {\n\t\tpadding: 40px;\n\t\tpadding-left: 0%;\n\t\tpadding-right: 0%;\n\t}\n\n\t.album-links-wrapper {\n\t\tpadding-top: 40px;\n\t}\n\n\t.music-section {\n\t\tbackground: rgba(255,255,255,.5);\n\t}\n}\n\n/* iphone 6 */\n@media (max-device-width: 667px) { \n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 270px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t\tmargin-top: 40px;\n\t}\n    \n}\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px) {\n\n   .album-logo {\n\t  margin-top: 45px;\n\t  max-width: 300px;\n\t}\n\n\t.promoted-album {\n\t\tpadding: 20px;\n\t}\n\n\t.promoted-album-thumbnail {\n\t\twidth: 260px;\n\t}\n\n\t.album-promo {\n\t\theight: 300px;\n\t\tpadding: 0px;\n\t\toverflow: hidden;\n\t\tmargin-top: 40px;\n\t}\n}", ""]);
 
   // exports
 
@@ -1819,7 +1930,7 @@ module.exports =
   exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  width: 100%;\n  background: -webkit-gradient(linear, left top, right top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n  background: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background: -o-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background: linear-gradient(to right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background-repeat: no-repeat cover;\n  color: rgba(0,0,0, .7);\n  font-family: 'Helvetica',sans-serif;\n}\n\n.layout {\n  margin: 0 auto;\n  padding: 0;\n  text-align: center;\n  overflow: hidden;\n}\n\n", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.social-wrapper {\n\ttext-align: left;\n\tpadding-top: 20px;\n}\n\n.social-list a {\n\tfont-size: 30px;\n\tmargin: 15px;\n\t-webkit-transition: opacity .3s ease;\n\t-o-transition: opacity .3s ease;\n\ttransition: opacity .3s ease\n}\n\n.social-list a:hover{\n\topacity: .5;\n}\n\n.fa-facebook {\n\tcolor: #3b5998;\n}\n\n.fa-tumblr {\n\tcolor: #32506d;\n}\n\n.fa-twitter {\n\tcolor: #00aced;\n}\n\n.fa-instagram {\n\tcolor: #517fa4;\n}\n\n.footer {\n\theight: 100px;\n\tmargin-top: -20px;\n\tbackground-color: rgba(255,255,255, 1);\n}\n\n.mobile-footer {\n\tmargin-top: 0px;\n\tbottom: 0;\n\theight: 85px;\n\tbackground-color: rgba(255,255,255,.5);\n}\n\n/* iphone 6+ */\n@media only screen and (max-device-width: 736px) { \n\n\t.social-wrapper {\n\t\ttext-align: center;\n\t\tpadding-top: 12px;\n\t\tmargin-right: 13%;\n\t}\n\n  \t.social-list a {\n\t\tfont-size: 24px;\n\t\tmargin: 15px;\n\t\t-webkit-transition: opacity .3s ease;\n\t\t-o-transition: opacity .3s ease;\n\t\ttransition: opacity .3s ease\n\t}\n\n  \t.social-list a:hover{\n\t\topacity: .5;\n\t}\n}", ""]);
 
   // exports
 
@@ -1833,7 +1944,7 @@ module.exports =
 
 
   // module
-  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
+  exports.push([module.id, "\n.header-logo {\n\tmargin-top: 60px;\n}\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px) {\n\n  \t.header-logo{\n  \t\tmargin-top: 30px;\n\t\t  width: 280px;\n\t}\n\n}\n\n/* iphone 6 */\n@media only screen \n  and (min-device-width: 375px) \n  and (max-device-width: 667px) { \n\n  \t.header-logo {\n  \t\tmargin-top: 30px;\n\t\t  width: 350px;\n\t}\n\n}\n\n/* iphone 6+ */\n@media only screen \n  and (min-device-width: 414px) \n  and (max-device-width: 736px) { \n\n  \t.header-logo {\n  \t\twidth: 400px;\n  \t}\n\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) {\n\n  \t.header-logo {\n\t\twidth: 700px;\n\t}\n\n}", ""]);
 
   // exports
 
@@ -1847,7 +1958,7 @@ module.exports =
   exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n.merch-wrapper {\n\tmargin-top: 40px;\n}\n\na {\n\ttext-decoration: none;\n}\n\n.merch-store {\n\tdisplay: inline-block;\n\tmargin: auto;\n\tmargin-bottom: 40px;\n\theight: 600px;\n\twidth: 500px;\n\tborder-radius: 2px;\n\ttext-decoration: none;\n\tborder: none;\n\tcursor: pointer;\n\tbackground: -webkit-gradient(linear, right top, left top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n\tbackground: -webkit-linear-gradient(right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: -o-linear-gradient(right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: linear-gradient(to left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n    -webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out;\n}\n\n.merch-store img {\n\topacity: .8;\n\tmax-height: 400px;\n\tmargin-top: 50px;\n\t-webkit-transition: all .2s ease-out;\n\t-o-transition: all .2s ease-out;\n\ttransition: all .2s ease-out;\n}\n\n.merch-store h1 {\n\tfont-size: 40px;\n\tletter-spacing: 3px;\n\ttext-transform: uppercase;\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.merch-store p {\n\tfont-size: 16px;\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.merch-store:hover{\n\t-webkit-transform: scale(.95);\n\t    -ms-transform: scale(.95);\n\t     -o-transform: scale(.95);\n\t        transform: scale(.95);\n}\n\t\n\n\n.title-wrapper {\n\theight: 100px;\n\tpadding: 10px;\n\tpadding-top: 4px;\n\tbackground-color: rgba(255,255,255, 1);\n}\n\n.country-name {\n\tmargin-top: -25px;\n}\n\n/* iphone 6+ */\n@media (max-device-width: 736px)  { \n\n\t.merch-wrapper {\n\t\tmargin-top: 20px;\n\t}\n\n\t.merch-store {\n\t\tmax-width: 100%;\n\t\theight: 550px;\n\t\t-webkit-transform: scale(.9);\n\t\t    -ms-transform: scale(.9);\n\t\t     -o-transform: scale(.9);\n\t\t        transform: scale(.9);\n\t\tmargin-bottom: 0px;\n\t\tmargin-top: 0px none;\n\t}\n\n\t.merch-store img {\n\t\tmax-width: 300px;\n\t}\n\n\t.merch-store:hover{\n\t\t-webkit-transform: scale(.9);\n\t\t    -ms-transform: scale(.9);\n\t\t     -o-transform: scale(.9);\n\t\t        transform: scale(.9);\n\t}\n}\n\n", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  width: 100%;\n  background: -webkit-gradient(linear, left top, right top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n  background: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background: -o-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background: linear-gradient(to right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  background-repeat: no-repeat cover;\n  color: rgba(0,0,0, .7);\n  font-family: 'Helvetica',sans-serif;\n}\n\n.layout {\n  margin: 0 auto;\n  padding: 0;\n  text-align: center;\n  overflow: hidden;\n}\n\n", ""]);
 
   // exports
 
@@ -1858,10 +1969,10 @@ module.exports =
 
   exports = module.exports = __webpack_require__(2)();
   // imports
-  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
+
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n.desktop-navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 2em 0 5em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  margin-right: 60px;\n}\n\n.brand {\n  position: absolute;\n  left: 40px;\n  top: 10px;\n  width: 200px;\n}\n\n.desktop-nav-hidden {\n  visibility: hidden;\n  display: none;\n}\n\n.desktop-nav-show {\n  visibility: visible;\n}\n\n.mobile-navigation {\n  position: absolute;\n  height: 100%;\n}\n\n.mobile-navbar {\n  position: relative;\n  height: 60px;\n  width: 100%;\n  z-index: 1500;\n  background-color: rgba(255,255,255,.5);\n}\n\n.mobile-nav-hidden {\n  visibility: hidden;\n}\n\n.mobile-nav-show {\n  visibility: visible;\n}\n\n.mobile-nav-links {\n  height: 300px;\n  top: 50%;\n  margin-top: -150px;\n  position: relative;\n  padding: 0px;\n\n}\n\n.mobile-nav-links li {\n  text-align: center;\n  font-size: 40px;\n  list-style: none;\n  margin-top: 20px;\n  font-weight: lighter;\n}\n\n.mobile-nav-links a {\n  color: #ebb09d;\n  background: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n\n.mobile-menu-background {\n  position: absolute;\n  z-index: 3000;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  background-color: rgba(255,255,255,1);\n  text-align: center;\n}\n\n.mobile-menu-wrapper-open {\n  opacity: 1;\n  visibility: visible;\n}\n\n.mobile-menu-wrapper-closed {\n  opacity: 0;\n  visibility: hidden;\n}\n\n.mmbOpen a {\n  opacity: 1;\n  -webkit-transition: opacity 1.3s ease-in;\n  -o-transition: opacity 1.3s ease-in;\n  transition: opacity 1.3s ease-in;\n}\n\n.mmbClosed a {\n  opacity: 0;\n}\n\n.menu-icon {\n  position: absolute;\n  z-index: 4000;\n  width: 120px;\n  margin-top: 22px;\n  left: 100%;\n}\n\n.menu-title {\n  font-size: 15px;\n  margin-left: 4px;\n  display: inline;\n}\n\n.burger {\n  font-size: 20px;\n  display: inline-block;\n}\n\n.close {\n  font-size: 20px;\n  display: inline-block;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n  opacity: 1;\n}\n.nav-item-hidden {\n  opacity: 0;\n}\n\n.animate-nav-item {\n  -webkit-animation: pulse 1s 1;\n       -o-animation: pulse 1s 1;\n          animation: pulse 1s 1;\n}\n\n.Navigation-link {\n  padding: 10px;\n  color: rgba(255,255,255, 1);\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n  -webkit-transition: all .2s ease-out;\n  -o-transition: all .2s ease-out;\n  transition: all .2s ease-out;\n  border-radius: 1px\n}\n\n.Navigation-link:hover{\n  -webkit-box-shadow: inset 0 0 0 2px white;\n          box-shadow: inset 0 0 0 2px white;\n}\n\n@-webkit-keyframes pulse {\n  0% { -webkit-transform: scale(.8); transform: scale(.8);  }\n  40% { -webkit-transform: scale(1.2); transform: scale(1.2);}\n  70% { -webkit-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -webkit-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -webkit-transform: scale(1); transform: scale(1); }\n}\n\n@-o-keyframes pulse {\n  0% { -o-transform: scale(.8); transform: scale(.8);  }\n  40% { -o-transform: scale(1.2); transform: scale(1.2);}\n  70% { -o-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -o-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -o-transform: scale(1); transform: scale(1); }\n}\n\n@keyframes pulse {\n  0% { -webkit-transform: scale(.8); -o-transform: scale(.8); transform: scale(.8);  }\n  40% { -webkit-transform: scale(1.2); -o-transform: scale(1.2); transform: scale(1.2);}\n  70% { -webkit-transform: scale(1); -o-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -webkit-transform: scale(1.03); -o-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -webkit-transform: scale(1); -o-transform: scale(1); transform: scale(1); }\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) \n  and (orientation: portrait) \n  and (min-device-pixel-ratio: 1) {\n\n    .mobile-nav-links {\n      height: 600px;\n      top: 50%;\n      margin-top: -300px;\n      position: relative;\n      padding: 0px;\n    }\n\n    .mobile-nav-links li {\n      text-align: center;\n      font-size: 80px;\n      list-style: none;\n      margin-top: 30px;\n      font-weight: lighter;\n    }\n\n}\n\n@media only screen and (min-width: 769px) {\n  .mobile-navigation {\n    visibility: hidden;\n  }\n\n  .mobile-navbar {\n    visibility: hidden;\n  }\n}", ""]);
+  exports.push([module.id, "/**\n * React Static Boilerplate\n * https://github.com/koistya/react-static-boilerplate\n * Copyright (c) Konstantin Tarkus (@koistya) | MIT license\n */\n\n.Link {\n\n}\n", ""]);
 
   // exports
 
@@ -1875,13 +1986,55 @@ module.exports =
   exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
 
   // module
-  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n.tour {\n  text-align: center;\n}\n\n.tour-dates-wrapper {\n  margin-top: 100px;\n  margin-bottom: 30px;\n}\n\n.tour-dates-wrapper a {\n  color: white;\n}\n\n.tour-header {\n  position: absolute;\n  background-color: white;\n  width: 100%;\n  margin: auto;\n  margin-top: -100px;\n  text-align: center;\n}\n\n.tour-header h1 {\n  font-size: 40px;\n  color: #ebb09d;\n  background: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px)\n  and (min-device-pixel-ratio: 2) {\n\n    .tour-dates-wrapper {\n      overflow: scroll;\n    }\n\n    .tour-header {\n      margin-bottom: 40px;\n      margin-top: 0px;\n    }\n \n}\n\n/* iphone 6 */\n@media only screen \n  and (min-device-width: 375px) \n  and (max-device-width: 667px) { \n\n\n}\n\n/* iphone 6+ */\n@media only screen \n  and (min-device-width: 414px) \n  and (max-device-width: 736px) { \n\n\n\n    .tour-dates-wrapper {\n      margin-top: 100px;\n      margin-bottom: 20px;\n    }\n\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) {\n\n\n\n}", ""]);
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.merch-wrapper {\n\tmargin-top: 40px;\n}\n\na {\n\ttext-decoration: none;\n}\n\n.merch-store {\n\tdisplay: inline-block;\n\tmargin: auto;\n\tmargin-bottom: 40px;\n\theight: 600px;\n\twidth: 500px;\n\tborder-radius: 2px;\n\ttext-decoration: none;\n\tborder: none;\n\tcursor: pointer;\n\tbackground: -webkit-gradient(linear, right top, left top, from(rgba(236,180,162,1)), to(rgba(249,229,204,1)));\n\tbackground: -webkit-linear-gradient(right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: -o-linear-gradient(right, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\tbackground: linear-gradient(to left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n    -webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n            box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n    -webkit-transition: all .2s ease-out;\n    -o-transition: all .2s ease-out;\n    transition: all .2s ease-out;\n}\n\n.merch-store img {\n\topacity: .8;\n\tmax-height: 400px;\n\tmargin-top: 50px;\n\t-webkit-transition: all .2s ease-out;\n\t-o-transition: all .2s ease-out;\n\ttransition: all .2s ease-out;\n}\n\n.merch-store h1 {\n\tfont-size: 40px;\n\tletter-spacing: 3px;\n\ttext-transform: uppercase;\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.merch-store p {\n\tfont-size: 16px;\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n.merch-store:hover{\n\t-webkit-transform: scale(.95);\n\t    -ms-transform: scale(.95);\n\t     -o-transform: scale(.95);\n\t        transform: scale(.95);\n}\n\t\n\n\n.title-wrapper {\n\theight: 100px;\n\tpadding: 10px;\n\tpadding-top: 4px;\n\tbackground-color: rgba(255,255,255, 1);\n}\n\n.country-name {\n\tmargin-top: -25px;\n}\n\n/* iphone 6+ */\n@media (max-device-width: 736px)  { \n\n\t.merch-wrapper {\n\t\tmargin-top: 20px;\n\t}\n\n\t.merch-store {\n\t\tmax-width: 100%;\n\t\theight: 550px;\n\t\t-webkit-transform: scale(.9);\n\t\t    -ms-transform: scale(.9);\n\t\t     -o-transform: scale(.9);\n\t\t        transform: scale(.9);\n\t\tmargin-bottom: 0px;\n\t\tmargin-top: 0px none;\n\t}\n\n\t.merch-store img {\n\t\tmax-width: 300px;\n\t}\n\n\t.merch-store:hover{\n\t\t-webkit-transform: scale(.9);\n\t\t    -ms-transform: scale(.9);\n\t\t     -o-transform: scale(.9);\n\t\t        transform: scale(.9);\n\t}\n}\n\n", ""]);
 
   // exports
 
 
 /***/ },
 /* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
+
+  // module
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.desktop-navigation {\n  display: -webkit-box;\n  display: -webkit-flex;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  margin: 2em 0 5em 0;\n  list-style: none;\n  -webkit-box-pack: end;\n  -webkit-justify-content: flex-end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  margin-right: 60px;\n}\n\n.brand {\n  position: absolute;\n  left: 40px;\n  top: 10px;\n  width: 200px;\n}\n\n.desktop-nav-hidden {\n  visibility: hidden;\n  display: none;\n}\n\n.desktop-nav-show {\n  visibility: visible;\n}\n\n.mobile-navigation {\n  position: absolute;\n  height: 100%;\n}\n\n.mobile-navbar {\n  position: relative;\n  height: 60px;\n  width: 100%;\n  z-index: 1500;\n  background-color: rgba(255,255,255,.5);\n}\n\n.mobile-nav-hidden {\n  visibility: hidden;\n}\n\n.mobile-nav-show {\n  visibility: visible;\n}\n\n.mobile-nav-links {\n  height: 350px;\n  top: 50%;\n  margin-top: -175px;\n  position: relative;\n  padding: 0px;\n\n}\n\n.mobile-nav-links li {\n\ttext-align: center;\n\tfont-size: 40px;\n\tlist-style: none;\n\tmargin-top: 20px;\n\tfont-weight: lighter;\n}\n\n.mobile-nav-links a {\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n\n.mobile-menu-background {\n  position: absolute;\n  z-index: 3000;\n  height: 100%;\n  width: 100%;\n  top: 0;\n  background-color: rgba(255,255,255,1);\n  text-align: center;\n}\n\n.mobile-menu-wrapper-open {\n  opacity: 1;\n  visibility: visible;\n}\n\n.mobile-menu-wrapper-closed {\n  opacity: 0;\n  visibility: hidden;\n}\n\n.mmbOpen a {\n  opacity: 1;\n  -webkit-transition: opacity 1.3s ease-in;\n  -o-transition: opacity 1.3s ease-in;\n  transition: opacity 1.3s ease-in;\n}\n\n.mmbClosed a {\n  opacity: 0;\n}\n\n.menu-icon {\n  position: absolute;\n  z-index: 4000;\n  width: 120px;\n  margin-top: 22px;\n  left: 100%;\n}\n\n.menu-title {\n  font-size: 15px;\n  margin-left: 4px;\n  display: inline;\n}\n\n.burger {\n  font-size: 20px;\n  display: inline-block;\n}\n\n.close {\n  font-size: 20px;\n  display: inline-block;\n}\n\n.Navigation-item {\n  padding: 0 1em;\n  opacity: 1;\n}\n.nav-item-hidden {\n  opacity: 0;\n}\n\n.animate-nav-item {\n  -webkit-animation: pulse 1s 1;\n       -o-animation: pulse 1s 1;\n          animation: pulse 1s 1;\n}\n\n.Navigation-link {\n  padding: 10px;\n  color: rgba(255,255,255, 1);\n  text-decoration: none;\n  text-transform: uppercase;\n  cursor: pointer;\n  -webkit-transition: all .2s ease-out;\n  -o-transition: all .2s ease-out;\n  transition: all .2s ease-out;\n  border-radius: 1px\n}\n\n.Navigation-link:hover{\n\t-webkit-box-shadow: inset 0 0 0 2px white;\n\t        box-shadow: inset 0 0 0 2px white;\n}\n\n@-webkit-keyframes pulse {\n  0% { -webkit-transform: scale(.8); transform: scale(.8);  }\n  40% { -webkit-transform: scale(1.2); transform: scale(1.2);}\n  70% { -webkit-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -webkit-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -webkit-transform: scale(1); transform: scale(1); }\n}\n\n@-o-keyframes pulse {\n  0% { -o-transform: scale(.8); transform: scale(.8);  }\n  40% { -o-transform: scale(1.2); transform: scale(1.2);}\n  70% { -o-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -o-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -o-transform: scale(1); transform: scale(1); }\n}\n\n@keyframes pulse {\n  0% { -webkit-transform: scale(.8); -o-transform: scale(.8); transform: scale(.8);  }\n  40% { -webkit-transform: scale(1.2); -o-transform: scale(1.2); transform: scale(1.2);}\n  70% { -webkit-transform: scale(1); -o-transform: scale(1); transform: scale(1); opacity: 1;}\n  90% { -webkit-transform: scale(1.03); -o-transform: scale(1.03); transform: scale(1.03); }\n  100%{ -webkit-transform: scale(1); -o-transform: scale(1); transform: scale(1); }\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) \n  and (orientation: portrait) \n  and (min-device-pixel-ratio: 1) {\n\n    .mobile-nav-links {\n      height: 600px;\n      top: 50%;\n      margin-top: -300px;\n      position: relative;\n      padding: 0px;\n    }\n\n    .mobile-nav-links li {\n      text-align: center;\n      font-size: 80px;\n      list-style: none;\n      margin-top: 30px;\n      font-weight: lighter;\n    }\n\n}\n\n@media only screen and (min-width: 769px) {\n  .mobile-navigation {\n    visibility: hidden;\n  }\n\n  .mobile-navbar {\n    visibility: hidden;\n  }\n}", ""]);
+
+  // exports
+
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+
+
+  // module
+  exports.push([module.id, "\n.photos {\n\tmargin: 5%;\n}\n.photos iframe {\n\tborder: none;\n\toverflow: hidden;\n\twidth: 100%;\n}\n\n", ""]);
+
+  // exports
+
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+  exports.push([module.id, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);", ""]);
+
+  // module
+  exports.push([module.id, "/*\n * Scaffolding\n * -------------------------------------------------------------------------- */\n\n/*\n * Typography\n * -------------------------------------------------------------------------- */\n\n\n\n/*\n * Animations\n * -------------------------------------------------------------------------- */\n\n\n/*\n * Video\n * -------------------------------------------------------------------------- */\n\n.responsive-video-wrapper {\n\tposition: relative;\n\tpadding-bottom: 56.25%; /* 16:9 */\n\tpadding-top: 25px;\n\theight: 0;\n}\n\n.responsive-video-wrapper iframe {\n\tposition: absolute;\n\tborder: 0 none;\n\ttop: 0;\n\tleft: 0;\n\twidth: 100%;\n\theight: 100%;\n\t-webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n\t        box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.25);\n}\n\n.tour {\n  text-align: center;\n}\n\n.tour-dates-wrapper {\n  margin-top: 100px;\n  margin-bottom: 30px;\n}\n\n.tour-dates-wrapper a {\n  color: white;\n}\n\n.tour-header {\n  position: absolute;\n  background-color: white;\n  width: 100%;\n  margin: auto;\n  margin-top: -100px;\n  text-align: center;\n}\n\n.tour-header h1 {\n\tfont-size: 40px;\n\tcolor: #ebb09d;\n\tbackground: -webkit-linear-gradient(left, rgba(236,180,162,1) 0%, rgba(249,229,204,1) 100%);\n\t-webkit-background-clip: text;\n\t-webkit-text-fill-color: transparent;\n}\n\n\n/* iphone 5 */\n@media only screen \n  and (min-device-width: 320px) \n  and (max-device-width: 568px)\n  and (min-device-pixel-ratio: 2) {\n\n    .tour-dates-wrapper {\n      overflow: scroll;\n    }\n\n    .tour-header {\n      margin-bottom: 40px;\n      margin-top: 0px;\n    }\n \n}\n\n/* iphone 6 */\n@media only screen \n  and (min-device-width: 375px) \n  and (max-device-width: 667px) { \n\n\n}\n\n/* iphone 6+ */\n@media only screen \n  and (min-device-width: 414px) \n  and (max-device-width: 736px) { \n\n\n\n    .tour-dates-wrapper {\n      margin-top: 100px;\n      margin-bottom: 20px;\n    }\n\n}\n\n/* ipad */\n@media only screen \n  and (min-device-width: 768px) \n  and (max-device-width: 1024px) {\n\n\n\n}", ""]);
+
+  // exports
+
+
+/***/ },
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -1895,85 +2048,85 @@ module.exports =
 
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "cf597ecf00cb8e3e07bf299e0c43f535.png";
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "df065f6637728b5da34d9b3c4d2e392a.png";
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "20e08ad91b4bc6ea8d7c95d19cb72edc.png";
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "7a495477b6d5d1fbd4bb25158cff0482.png";
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "a6d8b3259b2c90680b8f1101c334f6df.png";
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "8e8b99a1beeb96ad060727c53cbaf515.png";
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "0232b8866ca466036703443de6f897fb.png";
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports) {
 
   module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAA6CAYAAAD1AhaMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABFxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wUmlnaHRzOk1hcmtlZD0iRmFsc2UiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0idXVpZDpCQ0QyNkM5QkY5QjlERjExOUQ0MUQ5MTI3QThBNzc4RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQThGMjY3OTAwMkQxMUU2OUUyQkFDNDY1MjAzRTdGOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQThGMjY3ODAwMkQxMUU2OUUyQkFDNDY1MjAzRTdGOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0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"
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "0577d4ff8cdb9f1c3af4f312b5486961.png";
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "8f1f7513d5a1900c71bbf9afacff8e16.png";
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom");
