@@ -1,7 +1,14 @@
 @import '../variables.scss';
 
 .merch-wrapper {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
 	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 a {
@@ -9,27 +16,26 @@ a {
 }
 
 .merch-store {
-	display: inline-block;
+	flex: 1;
 	margin: auto;
 	margin-bottom: 40px;
-	height: 600px;
-	width: 500px;
+	// height: 600px;
+	max-width: 500px;
+	padding: 20px;
 	border-radius: 2px;
 	text-decoration: none;
 	border: none;
 	cursor: pointer;
 	background: $body-bg2;
-    box-shadow: $drop-shadow;
-    transition: all .2s ease-out;
-
-
+  box-shadow: $drop-shadow;
+  transition: all .2s ease-out;
 
     &:hover {
 	    transform: scale(.95);
 	}
 
     img {
-    	opacity: .8;
+    opacity: .8;
 		max-height: 400px;
 		margin-top: 50px;
 		transition: all .2s ease-out;
@@ -79,7 +85,7 @@ a {
 
 	.merch-store {
 		max-width: 100%;
-		height: 550px;
+		// height: 550px;
 		transform: scale(.9);
 		margin-bottom: 0px;
 		margin-top: 0px none;

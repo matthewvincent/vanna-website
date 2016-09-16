@@ -21,7 +21,6 @@ function Html({ title, description, body, debug }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
         <script src={'/app.js?' + new Date().getTime()} />
         <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'> </script>
-        <script src="http://snapwidget.com/js/snapwidget.js"></script>
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />

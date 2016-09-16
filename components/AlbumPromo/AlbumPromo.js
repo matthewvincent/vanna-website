@@ -20,7 +20,7 @@ const AlbumPromo = () => (
       </iframe>
     </AlbumTeaser>
 	  <div className="release-info">
-	    <h1>IN STORES JULY 8, 2016</h1>
+	    <h1>NEW ALBUM OUT NOW</h1>
 	    <PreorderButton
 	  	  link="http://smarturl.it/VannaMA" 
 	    > BUY CD/LP

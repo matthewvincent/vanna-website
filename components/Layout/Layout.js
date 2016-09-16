@@ -24,10 +24,6 @@ const Layout = React.createClass({
           href: "/merch" ,
           show: true   
         }, {
-          name: "Photos",
-          href: "/photos",
-          show: true
-        }, {
           name: "Tour",
           href: "/tour",
           show: true
