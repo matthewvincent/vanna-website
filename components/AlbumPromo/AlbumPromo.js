@@ -13,7 +13,7 @@ const AlbumPromo = () => (
       <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/lWbrQ97kuTA" 
+        src="https://www.youtube.com/embed/aJ5YacpvT1E" 
         frameborder="0" 
         allowfullscreen
       >
