@@ -1,19 +1,13 @@
 const videoData = [
-	{ 
-		url: "https://www.youtube.com/embed/7ttTtdvctVs",
-		title: "Got The Life"
-	},{
-	    url: "https://www.youtube.com/embed/4nG3pvjWubw",
-	    title: "Zero"
+	{
+		url: "https://www.youtube.com/embed/aJ5YacpvT1E",
+		title: "Pretty Grim"
 	},{
 	    url: "https://www.youtube.com/embed/QiQArI_cPFo",
 	    title: "Fuel"
 	},{
 	    url: "https://www.youtube.com/embed/dgu3kr5hmx0",
 	    title:"The Beautiful People"
-	},{
-	    url:"https://www.youtube.com/embed/gR2xjt2BLDg",
-	    title: "Self Esteem"
 	},{
 		url: "https://www.youtube.com/embed/yVj9qlt3aGE",
 		title: "Toxic Prentender"

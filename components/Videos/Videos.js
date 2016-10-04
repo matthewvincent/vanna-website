@@ -46,25 +46,25 @@ const VideoList = ({data, mobile}) => {
 
 	  videoList.push(
 	    <div 
-		  className= "video-background"
-		  key={title}
-		> 
-		  <div className="video">
-		    <Iframe
-			  iframe='iframe'  
-			  src={src}
-			  width={width} 
-		      height={height} 
-		      frameBorder="0" 
-		      allowFullScreen 
-			/>
-	      </div>
-		</div>
-      );
+  		  className= "video-background"
+  		  key={title}
+		  > 
+  		  <div className="video">
+  		    <Iframe
+    			  iframe='iframe'  
+    			  src={src}
+    			  width={width} 
+    	      height={height} 
+    	      frameBorder="0" 
+    	      allowFullScreen 
+    			/>
+  	    </div>
+		  </div>
+    );
   });
 
   return (
-	<div>
+	  <div>
      {videoList}
     </div>
   );
