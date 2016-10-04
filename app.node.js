@@ -310,7 +310,7 @@ module.exports =
         _react2['default'].createElement('iframe', {
           width: '560',
           height: '315',
-          src: 'https://www.youtube.com/embed/aJ5YacpvT1E',
+          src: 'https://www.youtube.com/embed/zjO6paeOVGM',
           frameborder: '0',
           allowfullscreen: true
         })
@@ -1324,20 +1324,14 @@ module.exports =
   	value: true
   });
   var videoData = [{
-  	url: "https://www.youtube.com/embed/7ttTtdvctVs",
-  	title: "Got The Life"
-  }, {
-  	url: "https://www.youtube.com/embed/4nG3pvjWubw",
-  	title: "Zero"
+  	url: "https://www.youtube.com/embed/aJ5YacpvT1E",
+  	title: "Pretty Grim"
   }, {
   	url: "https://www.youtube.com/embed/QiQArI_cPFo",
   	title: "Fuel"
   }, {
   	url: "https://www.youtube.com/embed/dgu3kr5hmx0",
   	title: "The Beautiful People"
-  }, {
-  	url: "https://www.youtube.com/embed/gR2xjt2BLDg",
-  	title: "Self Esteem"
   }, {
   	url: "https://www.youtube.com/embed/yVj9qlt3aGE",
   	title: "Toxic Prentender"
@@ -1365,7 +1359,7 @@ module.exports =
   'use strict';
 
   Object.defineProperty(exports, '__esModule', {
-  		value: true
+    value: true
   });
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -1381,75 +1375,75 @@ module.exports =
   var _VideoDataJs2 = _interopRequireDefault(_VideoDataJs);
 
   var Videos = _react2['default'].createClass({
-  		displayName: 'Videos',
+    displayName: 'Videos',
 
-  		getInitialState: function getInitialState() {
-  				return { mobile: true };
-  		},
+    getInitialState: function getInitialState() {
+      return { mobile: true };
+    },
 
-  		componentDidMount: function componentDidMount() {
-  				if (!matchMedia('(max-width: 768px)').matches) {
-  						this.setState({ mobile: false });
-  				}
-  		},
+    componentDidMount: function componentDidMount() {
+      if (!matchMedia('(max-width: 768px)').matches) {
+        this.setState({ mobile: false });
+      }
+    },
 
-  		render: function render() {
+    render: function render() {
 
-  				return _react2['default'].createElement(
-  						'div',
-  						{ className: 'videos-wrapper' },
-  						_react2['default'].createElement(VideoList, {
-  								data: _VideoDataJs2['default'],
-  								mobile: this.state.mobile
-  						})
-  				);
-  		}
+      return _react2['default'].createElement(
+        'div',
+        { className: 'videos-wrapper' },
+        _react2['default'].createElement(VideoList, {
+          data: _VideoDataJs2['default'],
+          mobile: this.state.mobile
+        })
+      );
+    }
   });
 
   var VideoList = function VideoList(_ref) {
-  		var data = _ref.data;
-  		var mobile = _ref.mobile;
+    var data = _ref.data;
+    var mobile = _ref.mobile;
 
-  		var Iframe = undefined,
-  		    videoList = undefined,
-  		    height = undefined,
-  		    width = undefined;
+    var Iframe = undefined,
+        videoList = undefined,
+        height = undefined,
+        width = undefined;
 
-  		Iframe = 'iframe';
-  		videoList = [];
-  		height = mobile ? "180" : "360";
-  		width = mobile ? "320" : "640";
+    Iframe = 'iframe';
+    videoList = [];
+    height = mobile ? "180" : "360";
+    width = mobile ? "320" : "640";
 
-  		data.forEach(function (v) {
-  				var src = v.url;
-  				var title = v.title;
+    data.forEach(function (v) {
+      var src = v.url;
+      var title = v.title;
 
-  				videoList.push(_react2['default'].createElement(
-  						'div',
-  						{
-  								className: 'video-background',
-  								key: title
-  						},
-  						_react2['default'].createElement(
-  								'div',
-  								{ className: 'video' },
-  								_react2['default'].createElement(Iframe, {
-  										iframe: 'iframe',
-  										src: src,
-  										width: width,
-  										height: height,
-  										frameBorder: '0',
-  										allowFullScreen: true
-  								})
-  						)
-  				));
-  		});
+      videoList.push(_react2['default'].createElement(
+        'div',
+        {
+          className: 'video-background',
+          key: title
+        },
+        _react2['default'].createElement(
+          'div',
+          { className: 'video' },
+          _react2['default'].createElement(Iframe, {
+            iframe: 'iframe',
+            src: src,
+            width: width,
+            height: height,
+            frameBorder: '0',
+            allowFullScreen: true
+          })
+        )
+      ));
+    });
 
-  		return _react2['default'].createElement(
-  				'div',
-  				null,
-  				videoList
-  		);
+    return _react2['default'].createElement(
+      'div',
+      null,
+      videoList
+    );
   };
 
   exports['default'] = Videos;
